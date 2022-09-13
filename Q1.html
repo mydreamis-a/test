@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1_test_0913</title>
+  </head>
+  <body>
+    <div id="one">One</div>
+    <div id="two">Two</div>
+  </body>
+  <script>
+    //
+    const { log } = console;
+    const one = document.getElementById("one");
+    const two = document.getElementById("two");
+    //
+    one.addEventListener("click", function () {
+      two.remove();
+      log(two);
+    });
+    //
+  </script>
+</html>

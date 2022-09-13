@@ -5,19 +5,27 @@ const { log } = console;
 // ㅜ [1,2,3,3],[3,4,5],[2,3,4,7,8] -> output [3]
 function commonElements(kArray) {
   //
-  kArray.forEach((el, idx, arr) => {
-    el.reduce((prev, curr) => {
+  return kArray[0].reduce((prev, curr) => {
+    //
+    let allSame = true;
+    //
+    kArray.forEach((el) => {
       //
-      for (let i = 0; i < arr.length; i++) {
+      const isSame = el.some(value => value === curr);
+      if (!isSame) {
         //
-        if (!el.some((value) => value === curr)) {
-          break;
-        }
-        //
-        return [...prev, curr];
-      }
-    }, new Array());
-  });
+        allSame = false;
+        return;
+      };
+    });
+    if (allSame) {
+      return [...prev, curr];
+    }
+    //
+    else {
+      return [...prev];
+    };
+  }, new Array());
 }
 log(
   commonElements([
@@ -26,3 +34,5 @@ log(
     [1, 2],
   ])
 );
+//
+// 09.14.01 수정

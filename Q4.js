@@ -5,7 +5,6 @@ function base10ToString(n, arr = new Array()) {
   //
   let power = 0;
   const base = 2;
-  console.log("dsfds 1");
   //
   while (true) {
     if (n < Math.pow(base, power)) {
@@ -20,8 +19,10 @@ function base10ToString(n, arr = new Array()) {
   //
   if (n >= base) {
     //
-    return base10ToString(n, arr); //
+    // log("1");
+    return base10ToString(n, arr);
   }
+  // log("2");
   arr[0] = n;
   //
   for (let i = 0; i < arr.length; i++) {
@@ -34,5 +35,5 @@ function base10ToString(n, arr = new Array()) {
   return arr.reverse().join(", ");
 }
 log(base10ToString(100));
-
-// 09.13.17 수정
+//
+// 09.14.01 수정

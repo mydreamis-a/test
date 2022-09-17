@@ -7,26 +7,24 @@ function swap(strArr, index1, index2) {
   strArr[index1] = strArr[index2];
   strArr[index2] = temp;
 }
-
 function permute(strArr, begin, end) {
-  //
-  //log("begin:", begin, "end:", end)
   //
   if (begin === end) {
     //
-    console.log("**************", strArr);
+    log("**************", strArr);
   }
   //
   else {
-    for (let i = begin; i < end + 1; i++) { // 0, 1, 2
+    for (let i = begin; i < end + 1; i++) {
+      // 0, 1, 2
       //
-      log("begin:", begin, "end:", end, "i:", i)
+      log(begin === i, begin, i);
       //
       swap(strArr, begin, i);
       permute(strArr, begin + 1, end);
       //
       swap(strArr, begin, i);
-      log('toDoList')
+      log("toDoList:", begin === i, begin, i);
     }
   }
 }
@@ -34,6 +32,6 @@ function permuteArray(strArr) {
   //
   permute(strArr, 0, strArr.length - 1);
 }
-permuteArray(["1", "2", "3"]);
+permuteArray(["A", "B", "C"]);
 //
 // 정답 코드
